@@ -41,8 +41,8 @@
     remote_src: yes
   notify: restart consul
 
-- name: Consul | Link binary
-  file:
-    src: "{{ consul_bindir }}/consul"
-    dest: /usr/local/bin/consul
-    state: link
+# - name: Consul | Link binary
+#   file:
+#     src: "{{ consul_bindir }}/consul"
+#     dest: /usr/local/bin/consul
+#     state: link
