@@ -8,6 +8,7 @@
 - name: Consul | Install python dependencies
   pip:
     name: "{{ consul_required_python_libs }}"
+    executable: pip
 
 - name: Consul | Ensure Consul group
   group:
@@ -43,5 +44,5 @@
 - name: Consul | Link binary
   file:
     src: "{{ consul_bindir }}/consul"
-    dest: /usr/bin/consul
+    dest: /usr/local/bin/consul
     state: link

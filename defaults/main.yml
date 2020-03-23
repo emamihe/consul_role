@@ -24,7 +24,7 @@ consul_loglevel: INFO
 consul_domain: consul
 consul_datacenter: main
 consul_interface: "{{ ansible_default_ipv4.alias }}"
-consul_ip: "{{ hostvars[ansible_nodename]['ansible_' + consul_interface]['ipv4']['address'] }}"
+consul_ip: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
 consul_http_port: 8500
 consul_dns_port: 8600
 

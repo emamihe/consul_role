@@ -1,4 +1,9 @@
 ---
+- name: Consul | Create needed directories
+  file:
+    path: "{{ consul_configdir }}"
+    state: directory
+
 - name: Consul | Template out config
   template:
     src: "{{ consul_configuration_template_path }}"
