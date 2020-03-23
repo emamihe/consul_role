@@ -1,5 +1,5 @@
 ---
-consul_version: 1.2.3
+consul_version: 1.7.0
 
 consul_user: consul
 consul_group: consul
@@ -31,6 +31,9 @@ consul_dns_port: 8600
 consul_configuration_template_path: consul.json.j2
 consul_logrotate_template_path: logrotate.j2
 consul_service_template_path: consul.service.j2
+
+# define this and set to encryption key to enable encrypt
+#consul_encrypt: "yourencryptionkey=="
 
 # Consul nodes behaviour #
 consul_agent: false
