@@ -7,10 +7,9 @@
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Consul | Install dependencies on RedHat
-  apt:
-    pkg: "{{ redhat_consul_required_libs }}"
-    update_cache: true
-    cache_valid_time: 600
+  yum:
+    name: "{{ redhat_consul_required_libs }}"
+    state: present
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - name: Consul | Install python dependencies
