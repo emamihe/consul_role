@@ -1,8 +1,13 @@
 ---
-consul_required_libs:
+debian_consul_required_libs:
   - unzip
   - ca-certificates
   - python-pip
+
+redhat_consul_required_libs:
+  - unzip
+  - ca-certificates
+  - python2-pip
 
 consul_required_python_libs:
   - python-consul
