@@ -11,9 +11,12 @@ redhat_consul_required_libs:
 
 consul_required_python_libs:
   - python-consul
+  - netaddr
 
-consul_url: "https://releases.hashicorp.com/consul/{{ consul_version }}/{{ consul_package }}"
-consul_package: "consul_{{ consul_version }}_linux_amd64.zip"
+#consul_url: "https://releases.hashicorp.com/consul/{{ consul_version }}/{{ consul_package }}"
+#consul_package: "consul_{{ consul_version }}_linux_amd64.zip"
+consul_url: "https://repo.snapp.tech/repository/raw/devops/binary/{{ consul_package }}"
+consul_package: "consul_1.7.0_linux_amd64.zip"
 
 consul_acl_required_libs:
   - openssl

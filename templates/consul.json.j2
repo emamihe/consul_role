@@ -11,8 +11,13 @@
   "log_file": "{{ consul_logfile }}",
   "domain": "{{ consul_domain }}",
   "datacenter": "{{ consul_datacenter }}",
+{% if consul_cidr_range is defined %}
+  "bind_addr": "{{ ansible_all_ipv4_addresses | ipaddr(consul_cidr_range) | first }}",
+  "advertise_addr": "{{ ansible_all_ipv4_addresses | ipaddr(consul_cidr_range) | first }}",
+{% else %}
   "bind_addr": "{{ consul_ip }}",
   "advertise_addr": "{{ consul_ip }}",
+{% endif %}
   "ports": {
     "http": {{ consul_http_port }},
     "dns": {{ consul_dns_port }}
